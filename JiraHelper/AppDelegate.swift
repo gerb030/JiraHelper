@@ -19,14 +19,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let jql = ""
         openJiraSearchQuery(jql: jql);
     }
+    @IBAction func ticketsInReleaseClicked(_ sender: Any) {
+        let jql = "project%20IN%20(Backlog%2C%20MAINT)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + "6.0.14" + "%22%20order%20by%20lastViewed%20DESC"
+        openJiraSearchQuery(jql: jql);
+    }
     
     @IBAction func quitClicked(_ sender: Any) {
         NSApplication.shared.terminate(self)
     }
     
     func openJiraSearchQuery(jql: String) {
-        let url = URL(string: "https://www.google.com" + jql)
-        NSWorkspace.shared().open(url)
+        let url = URL(string: "https://backbase.atlassian.net/issues/?jql=" + jql)
+        NSWorkspace.shared.open(url!)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {

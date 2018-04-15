@@ -25,8 +25,11 @@
                 <menuItem title="Item" id="9ZQ-Jx-a4W">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Item" id="tEE-qm-cZz">
+                <menuItem title="Tickets in release" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="ticketsInReleaseClicked:" target="Voe-Tx-rLC" id="2WO-Qg-dnv"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Colossus Board" id="v1N-mc-i9a">
                     <modifierMask key="keyEquivalentModifierMask"/>
