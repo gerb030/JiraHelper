@@ -10,7 +10,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="JiraHelper" customModuleProvider="target">
             <connections>
                 <outlet property="colossusBoard" destination="v1N-mc-i9a" id="cGf-5Z-3Cd"/>
@@ -22,8 +22,17 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="u1X-YH-xma">
             <items>
-                <menuItem title="Item" id="9ZQ-Jx-a4W">
+                <menuItem title="Generic open tickets" id="SjV-c2-Qlb">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="genericOpenTicketsClicked:" target="Voe-Tx-rLC" id="Sy1-kJ-dEA"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Epics in release" id="9ZQ-Jx-a4W">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="epicsInReleaseClicked:" target="Voe-Tx-rLC" id="uSr-Vb-FtN"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Tickets in release" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -31,17 +40,96 @@
                         <action selector="ticketsInReleaseClicked:" target="Voe-Tx-rLC" id="2WO-Qg-dnv"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Backlog open" id="V19-86-DIA">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="backlogOpenClicked:" target="Voe-Tx-rLC" id="1RK-re-jdL"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Blockers" id="BZg-1X-4lq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="blockersClicked:" target="Voe-Tx-rLC" id="EpG-Nw-EiJ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Important Clones" id="0rg-MJ-jzs">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="importantClonesClicked:" target="Voe-Tx-rLC" id="s0A-z3-4Iu"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Clones" id="Yxq-TR-YFy">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clonesClicked:" target="Voe-Tx-rLC" id="kuG-hn-951"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Code Freeze Check" id="h2f-hn-9FV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="codeFreezeCheckClicked:" target="Voe-Tx-rLC" id="NfZ-3x-GJu"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Fixversion but no VA" id="1nX-ra-zAk">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="fixversionButNoVaClicked:" target="Voe-Tx-rLC" id="dgi-Dj-Uyv"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="True fixes" id="Ju9-OF-2ln">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="trueFixesClicked:" target="Voe-Tx-rLC" id="dan-pO-o2L"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Last 1 week Maint" id="wU5-g3-xzE">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="last1WeekMaintClicked:" target="Voe-Tx-rLC" id="MJB-Gt-7A3"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Last 2 weeks Maint" id="Zyc-QA-3ve">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="last2WeeksMaintClicked:" target="Voe-Tx-rLC" id="T5U-Ei-Uq3"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Platform Maint" id="FL4-sf-gVn">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="platformMaintClicked:" target="Voe-Tx-rLC" id="Lsm-p4-C5U"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="SHi-vK-u2s"/>
                 <menuItem title="Colossus Board" id="v1N-mc-i9a">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="boardColossusClicked:" target="Voe-Tx-rLC" id="WLR-3o-nmv"/>
+                        <action selector="colossusBoardClicked:" target="Voe-Tx-rLC" id="FdY-wE-ges"/>
                     </connections>
                 </menuItem>
                 <menuItem title="CMBE Board" id="9Y6-g8-X5Y">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="cmbeBoardClicked:" target="Voe-Tx-rLC" id="96L-j1-aRq"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Bruce Lean Board" id="kFY-N0-2jR">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="bruceLeanBoard:" target="Voe-Tx-rLC" id="IaL-OB-CBX"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="PoC board" id="2QP-oX-AAQ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="pocBoardClicked:" target="Voe-Tx-rLC" id="wal-VN-LIw"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Backlog View" id="ob5-El-S8e">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="WCq-L6-r0q"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Quit" id="Y0j-iX-xku">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -50,7 +138,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="61" y="34"/>
+            <point key="canvasLocation" x="61.5" y="4.5"/>
         </menu>
     </objects>
 </document>
