@@ -11,11 +11,27 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-
-
+    @IBOutlet weak var statusMenu: NSMenu!
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    @IBOutlet weak var colossusBoard: NSMenuItem!
+    
+    @IBAction func boardColossusClicked(_ sender: Any) {
+        let jql = ""
+        openJiraSearchQuery(jql: jql);
+    }
+    
+    @IBAction func quitClicked(_ sender: Any) {
+        NSApplication.shared.terminate(self)
+    }
+    
+    func openJiraSearchQuery(jql: String) {
+        let url = URL(string: "https://www.google.com" + jql)
+        NSWorkspace.shared().open(url)
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        statusItem.title = "Jira Helper"
+        statusItem.menu = statusMenu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
