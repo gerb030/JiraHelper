@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -131,6 +132,45 @@
                         <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="WCq-L6-r0q"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
+                <menuItem title="Confluence" id="vVp-Jp-0vB">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="confluenceClicked:" target="Voe-Tx-rLC" id="egz-jK-IP1"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="qaS-Kk-w3O"/>
+                <menuItem title="Release" id="aKN-QK-O4n">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Release" id="ctM-9O-PiB">
+                        <items>
+                            <menuItem title="6.0.11" keyEquivalent="." id="aKv-2B-CQu">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="9q7-Qj-rzl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.12" id="TqA-FQ-dWS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="6.0.13" id="jwN-Zo-NxV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="6.0.14" id="SrK-CC-8NN">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="6.0.15" id="5ha-L7-7gD">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="6.0.16" id="uH2-7G-GOo">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="6.0.17" id="evm-ql-Lcc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Quit" id="Y0j-iX-xku">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -138,7 +178,17 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="61.5" y="4.5"/>
+            <point key="canvasLocation" x="61.5" y="34.5"/>
         </menu>
+        <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
+            <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="PCU-Po-cEM">
+                <font key="font" metaFont="system"/>
+                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+            </textFieldCell>
+            <point key="canvasLocation" x="345.5" y="58"/>
+        </textField>
     </objects>
 </document>

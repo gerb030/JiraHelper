@@ -116,6 +116,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func confluenceClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/my/recent-work")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func releasePicked(_ sender: NSMenuItem) {
+        sender.state = "on"
+    }
+    
+    
     @IBAction func quitClicked(_ sender: Any) {
         NSApplication.shared.terminate(self)
     }
