@@ -17,6 +17,7 @@
                 <outlet property="colossusBoard" destination="v1N-mc-i9a" id="cGf-5Z-3Cd"/>
                 <outlet property="quitButton" destination="Y0j-iX-xku" id="DCk-SL-6aZ"/>
                 <outlet property="quitClicked" destination="Y0j-iX-xku" id="RgI-SJ-qkx"/>
+                <outlet property="releases" destination="aKv-2B-CQu" id="BI8-6C-TGx"/>
                 <outlet property="statusMenu" destination="u1X-YH-xma" id="sXw-kx-L6F"/>
             </connections>
         </customObject>
@@ -139,6 +140,12 @@
                         <action selector="confluenceClicked:" target="Voe-Tx-rLC" id="egz-jK-IP1"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Search" id="j9l-jt-fbt">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="SearchClicked:" target="Voe-Tx-rLC" id="8tg-F8-h9C"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="qaS-Kk-w3O"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -147,26 +154,44 @@
                             <menuItem title="6.0.11" keyEquivalent="." id="aKv-2B-CQu">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="9q7-Qj-rzl"/>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="NfR-P9-yFM"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="6.0.12" id="TqA-FQ-dWS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="ONS-qr-bG3"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="6.0.13" id="jwN-Zo-NxV">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="kxj-ag-HMK"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="6.0.14" id="SrK-CC-8NN">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="dsG-lu-6h3"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="6.0.15" id="5ha-L7-7gD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="f0f-b5-VkU"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="6.0.16" id="uH2-7G-GOo">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="Se5-WN-Ce0"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="6.0.17" id="evm-ql-Lcc">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="jVB-Cp-Pqj"/>
+                                </connections>
                             </menuItem>
                         </items>
                     </menu>
@@ -189,6 +214,16 @@
                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
             </textFieldCell>
             <point key="canvasLocation" x="345.5" y="58"/>
+        </textField>
+        <textField verticalHuggingPriority="750" id="kZ1-Or-gew">
+            <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fXy-6x-uLy">
+                <font key="font" metaFont="system"/>
+                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+            </textFieldCell>
+            <point key="canvasLocation" x="254" y="99"/>
         </textField>
     </objects>
 </document>
