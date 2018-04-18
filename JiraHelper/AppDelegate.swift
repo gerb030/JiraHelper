@@ -42,7 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func blockersClicked(_ sender: Any) {
-        let jql = "priority%20%3D%20Blocker%20AND%20(affectedVersion%20in%20("+allOldVersions+"))%20AND%20status%20not%20in%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20not%20in%20(Epic%2C%20SubTask%2C%20Sub-Task)%20ORDER%20BY%20created%20ASC"
+        let jql = "priority%20%3D%20Blocker%20AND%20(affectedVersion%20in%20("+allOldVersions+"))%20AND%20status%20not%20in%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20not%20in%20(Epic)%20ORDER%20BY%20created%20ASC"
         openJiraSearchQuery(jql: jql);
     }
     
