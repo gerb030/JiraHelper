@@ -17,6 +17,7 @@
                 <outlet property="colossusBoard" destination="v1N-mc-i9a" id="cGf-5Z-3Cd"/>
                 <outlet property="quitButton" destination="Y0j-iX-xku" id="DCk-SL-6aZ"/>
                 <outlet property="quitClicked" destination="Y0j-iX-xku" id="RgI-SJ-qkx"/>
+                <outlet property="releaseMenu" destination="aKN-QK-O4n" id="C5o-nG-0Hr"/>
                 <outlet property="releases" destination="aKv-2B-CQu" id="BI8-6C-TGx"/>
                 <outlet property="statusMenu" destination="u1X-YH-xma" id="sXw-kx-L6F"/>
             </connections>
@@ -143,7 +144,7 @@
                 <menuItem title="Search" id="j9l-jt-fbt">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="SearchClicked:" target="Voe-Tx-rLC" id="8tg-F8-h9C"/>
+                        <action selector="searchClicked:" target="Voe-Tx-rLC" id="kxi-HL-WMs"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="qaS-Kk-w3O"/>
@@ -214,16 +215,6 @@
                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
             </textFieldCell>
             <point key="canvasLocation" x="345.5" y="58"/>
-        </textField>
-        <textField verticalHuggingPriority="750" id="kZ1-Or-gew">
-            <rect key="frame" x="0.0" y="0.0" width="96" height="22"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fXy-6x-uLy">
-                <font key="font" metaFont="system"/>
-                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-            </textFieldCell>
-            <point key="canvasLocation" x="254" y="99"/>
         </textField>
     </objects>
 </document>

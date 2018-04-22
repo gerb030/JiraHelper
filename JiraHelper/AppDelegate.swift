@@ -12,12 +12,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var releaseMenu: NSMenuItem!
+    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     @IBOutlet weak var releases: NSMenuItem!
     
     let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.16"
-    let release = "6.0.14"
+    var release = "6.0.14"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -105,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func bruceLeanBoard(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=865")
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=872")
         NSWorkspace.shared.open(url!)
     }
     
@@ -131,11 +133,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
-        for item in sender.parent!.menu!.items {
-            item.state = NSControl.StateValue.off
-        }
+//        for menuItem in releaseMenu.() as! [NSMenuItem] {
+//            // Switches off the first (and unique) 'on' item
+//            menuItem.state = NSControl.StateValue.off
+//        }
+        
+//        for item in sender.parent!.menu!.items {
+//            item.state = NSControl.StateValue.off
+//        }
         
         sender.state = sender.state == NSControl.StateValue.on ? NSControl.StateValue.off : NSControl.StateValue.on
+        release = sender.title;
     }
     
     
