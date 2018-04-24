@@ -77,12 +77,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func last1WeekMaintClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3C%207d%20ORDER%20BY%20priority"
+        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3E%20-7d%20ORDER%20BY%20priority"
         openJiraSearchQuery(jql: jql);
     }
     
     @IBAction func last2WeeksMaintClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3C%2014d%20ORDER%20BY%20priority"
+        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3E%20-14d%20ORDER%20BY%20priority"
         openJiraSearchQuery(jql: jql);
     }
     
