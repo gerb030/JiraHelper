@@ -127,10 +127,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func searchClicked(_ sender: Any) {
-        
         let url = URL(string: "https://backbase.atlassian.net/wiki/dosearchsite.action?queryString=iets")
         NSWorkspace.shared.open(url!)
     }
+    
+    @IBAction func deliveryGuildSpaceClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/GUIL/pages/405438486/Delivery+Guild")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func netsuiteClicked(_ sender: Any) {
+        let url = URL(string: "https://system.eu2.netsuite.com/app/center/card.nl?sc=-29&whence=")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func tribeStatusReportClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/346587688")
+        NSWorkspace.shared.open(url!)
+    }
+
+    
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {

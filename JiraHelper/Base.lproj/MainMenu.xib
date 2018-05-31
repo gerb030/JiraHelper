@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -148,6 +148,25 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="qaS-Kk-w3O"/>
+                <menuItem title="Delivery Guild space" id="PHe-Gb-r6f">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="deliveryGuildSpaceClicked:" target="Voe-Tx-rLC" id="E4O-zV-veN"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Netsuite" id="DKM-mA-Mkt">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="netsuiteClicked:" target="Voe-Tx-rLC" id="Fag-SH-ngJ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Tribe status report" id="6XV-R8-hC6">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="tribeStatusReportClicked:" target="Voe-Tx-rLC" id="9TN-JY-sNe"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Release" id="ctM-9O-PiB">
@@ -200,7 +219,7 @@
                 <menuItem title="Quit" id="Y0j-iX-xku">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="C54-yb-68x"/>
+                        <action selector="quitClicked:" target="Voe-Tx-rLC" id="D9l-rG-SE4"/>
                     </connections>
                 </menuItem>
             </items>
