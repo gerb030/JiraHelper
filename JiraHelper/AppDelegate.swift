@@ -146,6 +146,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
 
+    @IBAction func cxBudgetting(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1dJl8dCv1w0IOITclt_y9Fc4YvxC41BDzQR0MgB9QkWk/edit#gid=364681628")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func staffingPlan(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1mQVkZL4QO6qLszjn8h8HkLMiVp7uA1bwxFBGJxYsPmg/edit#gid=1654045633")
+        NSWorkspace.shared.open(url!)
+    }
     
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {

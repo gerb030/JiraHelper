@@ -166,6 +166,18 @@
                         <action selector="tribeStatusReportClicked:" target="Voe-Tx-rLC" id="9TN-JY-sNe"/>
                     </connections>
                 </menuItem>
+                <menuItem title="CX Budget &amp; Training" id="8rZ-DE-GdR">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="cxBudgetting:" target="Voe-Tx-rLC" id="35W-gE-zyE"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Staffing plan" id="HGQ-4o-gJi">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="staffingPlan:" target="Voe-Tx-rLC" id="2Vi-to-tA6"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -223,7 +235,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="61.5" y="34.5"/>
+            <point key="canvasLocation" x="61.5" y="54.5"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
