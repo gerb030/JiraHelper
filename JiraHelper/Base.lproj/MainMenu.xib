@@ -37,6 +37,12 @@
                         <action selector="epicsInReleaseClicked:" target="Voe-Tx-rLC" id="uSr-Vb-FtN"/>
                     </connections>
                 </menuItem>
+                <menuItem title="All these epics" id="93U-o8-gsV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="allTheseEpicsClicked:" target="Voe-Tx-rLC" id="42t-OB-ik3"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Tickets in release" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -235,7 +241,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="61.5" y="54.5"/>
+            <point key="canvasLocation" x="61.5" y="44.5"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
