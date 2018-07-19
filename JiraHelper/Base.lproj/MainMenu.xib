@@ -18,7 +18,7 @@
                 <outlet property="quitButton" destination="Y0j-iX-xku" id="DCk-SL-6aZ"/>
                 <outlet property="quitClicked" destination="Y0j-iX-xku" id="RgI-SJ-qkx"/>
                 <outlet property="releaseMenu" destination="aKN-QK-O4n" id="C5o-nG-0Hr"/>
-                <outlet property="releases" destination="aKv-2B-CQu" id="BI8-6C-TGx"/>
+                <outlet property="releases" destination="t6a-Nr-ABk" id="Vya-8K-nae"/>
                 <outlet property="statusMenu" destination="u1X-YH-xma" id="sXw-kx-L6F"/>
             </connections>
         </customObject>
@@ -229,6 +229,24 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="jVB-Cp-Pqj"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.18" id="vJ9-PH-CSb">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="eIO-6V-PVm"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.19" id="Rj6-b9-4SJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="tuK-BE-GO2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.1.0" id="t6a-Nr-ABk">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="wjm-Ol-9O2"/>
                                 </connections>
                             </menuItem>
                         </items>
