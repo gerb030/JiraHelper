@@ -161,7 +161,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1mQVkZL4QO6qLszjn8h8HkLMiVp7uA1bwxFBGJxYsPmg/edit#gid=1654045633")
         NSWorkspace.shared.open(url!)
     }
+
+    @IBAction func joinersLeaversList(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1EtZnT2AL5Ru3_0wqKtzXI4jGex9VgGAOA6E0NdhRgyo/edit?ts=5b55a2e9#gid=0")
+        NSWorkspace.shared.open(url!)
+    }
     
+    @IBAction func confluencePeopleList(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/221938570/R+D+Members")
+        NSWorkspace.shared.open(url!)
+    }
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {

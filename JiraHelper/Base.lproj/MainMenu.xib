@@ -184,6 +184,18 @@
                         <action selector="staffingPlan:" target="Voe-Tx-rLC" id="2Vi-to-tA6"/>
                     </connections>
                 </menuItem>
+                <menuItem title="HR Joiners &amp; Leavers" id="34z-lr-si3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="joinersLeaversList:" target="Voe-Tx-rLC" id="WgZ-DE-V8X"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="R&amp;D People List" id="j2y-2P-bU9">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="confluencePeopleList:" target="Voe-Tx-rLC" id="i9Q-ZQ-Bsb"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -259,7 +271,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="61.5" y="44.5"/>
+            <point key="canvasLocation" x="152.5" y="110.5"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
