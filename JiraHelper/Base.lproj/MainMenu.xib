@@ -190,6 +190,12 @@
                         <action selector="joinersLeaversList:" target="Voe-Tx-rLC" id="WgZ-DE-V8X"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Recruitment list" id="z9N-rF-OnP">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="recruitmentList:" target="Voe-Tx-rLC" id="j9E-sL-opM"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="R&amp;D People List" id="j2y-2P-bU9">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -255,10 +261,22 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="tuK-BE-GO2"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.1.0" id="t6a-Nr-ABk">
+                            <menuItem title="6.0.20" id="t6a-Nr-ABk">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="wjm-Ol-9O2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.21" id="eFh-6v-TlT">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="KSy-KD-f7V"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.22" id="5lF-ba-VQi">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="Qrj-Rv-L1f"/>
                                 </connections>
                             </menuItem>
                         </items>

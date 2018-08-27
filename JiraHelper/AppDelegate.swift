@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.1.0"
-    var release = "6.0.18"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.20%2C%206.0.21%2C%206.0.22"
+    var release = "6.0.19"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -63,8 +63,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func clonesClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint%2C%20backlog)%20AND%20summary%20~%20clone%20AND%20status%20not%20in%20(done%2C%20closed%2C%20resolved)%20AND%20issuetype%20not%20in%20(epic%2C%20subTaskIssueTypes())%20and%20priority%20in%20(critical%2C%20blocker)%20ORDER%20BY%20priority%20DESC%2C%20lastViewed%20DESC"
-        openJiraSearchQuery(jql: jql);
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/346587688")
+        NSWorkspace.shared.open(url!)
     }
     
     @IBAction func codeFreezeCheckClicked(_ sender: Any) {
@@ -166,6 +166,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1EtZnT2AL5Ru3_0wqKtzXI4jGex9VgGAOA6E0NdhRgyo/edit?ts=5b55a2e9#gid=0")
         NSWorkspace.shared.open(url!)
     }
+    
+    
+    @IBAction func recruitmentList(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1xOBRFlHnUxKXTUTcFL51ixsNi51Efs0hCNdapnIW4Jo/edit?usp=sharing")
+        NSWorkspace.shared.open(url!)
+    }
+
     
     @IBAction func confluencePeopleList(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/221938570/R+D+Members")
