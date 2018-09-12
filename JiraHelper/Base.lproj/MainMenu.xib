@@ -103,6 +103,12 @@
                         <action selector="last2WeeksMaintClicked:" target="Voe-Tx-rLC" id="T5U-Ei-Uq3"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Open Doc tickets" id="yqG-Bh-G7h">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openDocTickets:" target="Voe-Tx-rLC" id="hjQ-gq-hyi"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Platform Maint" id="FL4-sf-gVn">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -126,6 +132,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="bruceLeanBoard:" target="Voe-Tx-rLC" id="IaL-OB-CBX"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="CX Release Board" id="Jy1-V0-YRU">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="releaseBoard:" target="Voe-Tx-rLC" id="B1h-VS-9BH"/>
                     </connections>
                 </menuItem>
                 <menuItem title="PoC board" id="2QP-oX-AAQ">
@@ -289,7 +301,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="152.5" y="110.5"/>
+            <point key="canvasLocation" x="152.5" y="130.5"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
