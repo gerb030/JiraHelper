@@ -148,6 +148,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func personalPageClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/~gerbena/overview")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func gocdClicked(_ sender: Any) {
+        let url = URL(string: "https://gocd.backbase.com")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func checkmarxClicked(_ sender: Any) {
+        let url = URL(string: "https://checkmarx.backbase.com")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func blackduckClicked(_ sender: Any) {
+        let url = URL(string: "https://black-duck.backbase.com")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func sonarClicked(_ sender: Any) {
+        let url = URL(string: "https://sonar.backbase.com")
+        NSWorkspace.shared.open(url!)
+    }
+    
     @IBAction func deliveryGuildSpaceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/GUIL/pages/405438486/Delivery+Guild")
         NSWorkspace.shared.open(url!)
