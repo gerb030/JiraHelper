@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.20%2C%206.0.21%2C%206.0.22"
-    var release = "6.0.19"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.20%2C%206.0.21%2C%206.0.22%2C%206.0.23%2C%206.0.24%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.2.0%22"
+    var release = "6.0.23"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -137,6 +137,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=853&view=planning.nodetail")
         NSWorkspace.shared.open(url!)
     }
+    
+    @IBAction func springBootBacklogViewClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1012&view=planning.nodetail")
+        NSWorkspace.shared.open(url!)
+    }
+    
     
     @IBAction func confluenceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/my/recent-work")
