@@ -221,6 +221,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func confluenceIdentity(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/ID/overview")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func confluenceCX(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/development/overview")
+        NSWorkspace.shared.open(url!)
+    }
+
+    
+    
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {
 //            // Switches off the first (and unique) 'on' item

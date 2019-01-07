@@ -252,6 +252,18 @@
                         <action selector="confluencePeopleList:" target="Voe-Tx-rLC" id="i9Q-ZQ-Bsb"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Identity Space" id="zbb-n7-3iL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="confluenceIdentity:" target="Voe-Tx-rLC" id="GFD-cr-nI6"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="CX Space" id="SKq-TR-b5M">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="confluenceCX:" target="Voe-Tx-rLC" id="f08-9w-za1"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -311,7 +323,13 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="UVJ-lJ-eRf"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.0.23" id="cPf-aq-OOJ">
+                            <menuItem title="6.0.23" id="j58-wk-sYS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="qJQ-Mv-heG"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.24" id="cPf-aq-OOJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="j6L-qh-bde"/>
@@ -329,6 +347,24 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="RDc-H7-BvU"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="6.1.2" id="Ime-EU-OGW">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="2DZ-6b-Bbr"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.2.0" id="lzU-9V-pjv">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="YcW-Ju-Loi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.2.1" id="Prr-df-OEd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="4Sz-3e-lWz"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -339,7 +375,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="154.5" y="289"/>
+            <point key="canvasLocation" x="154.5" y="309"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
@@ -351,5 +387,11 @@
             </textFieldCell>
             <point key="canvasLocation" x="345.5" y="58"/>
         </textField>
+        <menuItem title="6.1.2" id="ewX-xA-Z6j">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="a9U-ah-g1m"/>
+            </connections>
+        </menuItem>
     </objects>
 </document>
