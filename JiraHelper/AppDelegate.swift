@@ -126,7 +126,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func releaseBoard(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=955&projectKey=CX")
     NSWorkspace.shared.open(url!)
-}
+    }
+    
+    @IBAction func releaseList(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/projects/CX?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        NSWorkspace.shared.open(url!)
+    }
     
     @IBAction func pocBoardClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=865")
@@ -214,7 +219,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1xOBRFlHnUxKXTUTcFL51ixsNi51Efs0hCNdapnIW4Jo/edit?usp=sharing")
         NSWorkspace.shared.open(url!)
     }
-
     
     @IBAction func confluencePeopleList(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/221938570/R+D+Members")
@@ -230,8 +234,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/development/overview")
         NSWorkspace.shared.open(url!)
     }
-
-    
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {

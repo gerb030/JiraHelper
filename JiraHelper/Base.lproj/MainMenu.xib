@@ -141,6 +141,12 @@
                         <action selector="releaseBoard:" target="Voe-Tx-rLC" id="GuF-ID-obJ"/>
                     </connections>
                 </menuItem>
+                <menuItem title="CX Releases list" id="Ca4-bD-BOS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="releaseList:" target="Voe-Tx-rLC" id="iX6-od-nDs"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="PoC board" id="2QP-oX-AAQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -375,7 +381,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="154.5" y="309"/>
+            <point key="canvasLocation" x="154.5" y="319"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
@@ -385,7 +391,7 @@
                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
             </textFieldCell>
-            <point key="canvasLocation" x="345.5" y="58"/>
+            <point key="canvasLocation" x="393" y="42"/>
         </textField>
         <menuItem title="6.1.2" id="ewX-xA-Z6j">
             <modifierMask key="keyEquivalentModifierMask"/>
