@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var releases: NSMenuItem!
     
     let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.20%2C%206.0.21%2C%206.0.22%2C%206.0.23%2C%206.0.24%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.2.0%22"
-    var release = "6.0.23"
+    var release = "6.0.24"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -118,6 +118,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func backlogReleasesClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=" + release + "&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func maintReleasesClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=" + release + "&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    
     @IBAction func bruceLeanBoard(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=872")
         NSWorkspace.shared.open(url!)
@@ -181,6 +192,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func sonarClicked(_ sender: Any) {
         let url = URL(string: "https://sonar.backbase.com")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func communityRetirementClicked(_ sender: Any) {
+        let url = URL(string: "https://community.backbase.com/d/retirement/")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func slaClicked(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1rwjJV5LoT8W-ed1KtijKSoiFuCAFfxixo6-OTaE2nnk/edit#gid=1642126855")
         NSWorkspace.shared.open(url!)
     }
     

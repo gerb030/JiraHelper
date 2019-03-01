@@ -129,6 +129,18 @@
                         <action selector="cmbeBoardClicked:" target="Voe-Tx-rLC" id="96L-j1-aRq"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Spring Boot backlog" id="VJi-TW-tgq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="springBootBacklogViewClicked:" target="Voe-Tx-rLC" id="4Jb-Q7-gDw"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Backlog Releases" id="3Mh-cI-xph">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Maint Releases" id="dSL-a0-maP">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
                 <menuItem title="Bruce Lean Board" id="kFY-N0-2jR">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -159,12 +171,6 @@
                         <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="WCq-L6-r0q"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Spring Boot backlog" id="VJi-TW-tgq">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="springBootBacklogViewClicked:" target="Voe-Tx-rLC" id="4Jb-Q7-gDw"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
                 <menuItem title="Confluence" id="vVp-Jp-0vB">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -191,12 +197,6 @@
                         <action selector="gocdClicked:" target="Voe-Tx-rLC" id="qAZ-g9-ut8"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Checkmarx" id="8OZ-oD-wCV">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="checkmarxClicked:" target="Voe-Tx-rLC" id="Aso-bm-LQB"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Blackduck" id="EMR-24-CeX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -207,6 +207,18 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="sonarClicked:" target="Voe-Tx-rLC" id="d5c-pE-mAY"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Community retirement" id="O2c-wn-xLv">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="communityRetirementClicked:" target="Voe-Tx-rLC" id="qJ5-Zi-oeb"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="SLA" id="2ni-rn-qf8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="slaClicked:" target="Voe-Tx-rLC" id="wkC-sP-2WP"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Omf-X0-H6R"/>
@@ -381,7 +393,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="154.5" y="319"/>
+            <point key="canvasLocation" x="153.5" y="385"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
