@@ -32,18 +32,6 @@
                         <action selector="genericOpenTicketsClicked:" target="Voe-Tx-rLC" id="Sy1-kJ-dEA"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Epics in release" id="9ZQ-Jx-a4W">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="epicsInReleaseClicked:" target="Voe-Tx-rLC" id="uSr-Vb-FtN"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="All these epics" id="93U-o8-gsV">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="allTheseEpicsClicked:" target="Voe-Tx-rLC" id="42t-OB-ik3"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Tickets in release" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -137,9 +125,15 @@
                 </menuItem>
                 <menuItem title="Backlog Releases" id="3Mh-cI-xph">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="backlogReleasesClicked:" target="Voe-Tx-rLC" id="kZC-wd-XVv"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Maint Releases" id="dSL-a0-maP">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="maintReleasesClicked:" target="Voe-Tx-rLC" id="o1F-1r-zpn"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Bruce Lean Board" id="kFY-N0-2jR">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -168,7 +162,13 @@
                 <menuItem title="Backlog View" id="ob5-El-S8e">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="WCq-L6-r0q"/>
+                        <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="oz9-VY-FbZ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="CX QA Board" id="NRi-pi-KHz">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="cxQABoardClicked:" target="Voe-Tx-rLC" id="kch-Ic-FVO"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
@@ -222,65 +222,72 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Omf-X0-H6R"/>
-                <menuItem title="Delivery Guild space" id="PHe-Gb-r6f">
+                <menuItem title="Staffing and Reports" id="zhU-W0-jV3">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="deliveryGuildSpaceClicked:" target="Voe-Tx-rLC" id="E4O-zV-veN"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Netsuite" id="DKM-mA-Mkt">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="netsuiteClicked:" target="Voe-Tx-rLC" id="Fag-SH-ngJ"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Tribe status report" id="6XV-R8-hC6">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="tribeStatusReportClicked:" target="Voe-Tx-rLC" id="9TN-JY-sNe"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="CX Budget &amp; Training" id="8rZ-DE-GdR">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="cxBudgetting:" target="Voe-Tx-rLC" id="35W-gE-zyE"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Staffing plan" id="HGQ-4o-gJi">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="staffingPlan:" target="Voe-Tx-rLC" id="2Vi-to-tA6"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="HR Joiners &amp; Leavers" id="34z-lr-si3">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="joinersLeaversList:" target="Voe-Tx-rLC" id="WgZ-DE-V8X"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Recruitment list" id="z9N-rF-OnP">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="recruitmentList:" target="Voe-Tx-rLC" id="j9E-sL-opM"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="R&amp;D People List" id="j2y-2P-bU9">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="confluencePeopleList:" target="Voe-Tx-rLC" id="i9Q-ZQ-Bsb"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Identity Space" id="zbb-n7-3iL">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="confluenceIdentity:" target="Voe-Tx-rLC" id="GFD-cr-nI6"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="CX Space" id="SKq-TR-b5M">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="confluenceCX:" target="Voe-Tx-rLC" id="f08-9w-za1"/>
-                    </connections>
+                    <menu key="submenu" title="Staffing and Reports" id="OOz-MW-CAg">
+                        <items>
+                            <menuItem title="Netsuite" id="DKM-mA-Mkt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="netsuiteClicked:" target="Voe-Tx-rLC" id="Fag-SH-ngJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Tribe status report" id="6XV-R8-hC6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="tribeStatusReportClicked:" target="Voe-Tx-rLC" id="9TN-JY-sNe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX Budget &amp; Training" id="8rZ-DE-GdR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="cxBudgetting:" target="Voe-Tx-rLC" id="35W-gE-zyE"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Staffing plan" id="HGQ-4o-gJi">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="staffingPlan:" target="Voe-Tx-rLC" id="2Vi-to-tA6"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="HR Joiners &amp; Leavers" id="34z-lr-si3">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="joinersLeaversList:" target="Voe-Tx-rLC" id="WgZ-DE-V8X"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Recruitment list" id="z9N-rF-OnP">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="recruitmentList:" target="Voe-Tx-rLC" id="j9E-sL-opM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="R&amp;D People List" id="j2y-2P-bU9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="confluencePeopleList:" target="Voe-Tx-rLC" id="i9Q-ZQ-Bsb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Identity Space" id="zbb-n7-3iL">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="confluenceIdentity:" target="Voe-Tx-rLC" id="GFD-cr-nI6"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX Space" id="SKq-TR-b5M">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="confluenceCX:" target="Voe-Tx-rLC" id="f08-9w-za1"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delivery Guild space" id="PHe-Gb-r6f">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="deliveryGuildSpaceClicked:" target="Voe-Tx-rLC" id="E4O-zV-veN"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Release" id="aKN-QK-O4n">
@@ -290,13 +297,25 @@
                             <menuItem title="6.0.14" id="SrK-CC-8NN">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="9dT-v7-dk8"/>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="1RK-v9-seQ"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="6.0.15" id="5ha-L7-7gD">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="Jg5-S0-zge"/>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="ZTF-Pz-VrL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.15.1" id="AWH-ap-HLL">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="8nI-ge-gnn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.15.2" id="wNY-gW-Ou3">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="djP-uk-Zek"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="6.0.16" id="uH2-7G-GOo">
@@ -323,6 +342,12 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="nkm-4w-1Gb"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="6.0.19.1" id="wca-ud-92T">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="9kJ-5e-40M"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="6.0.20" id="t6a-Nr-ABk">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -333,6 +358,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="Chg-dY-hGA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.21.1" id="H4u-Sf-2fw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="tA8-hf-dDy"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="6.0.22" id="5lF-ba-VQi">
@@ -347,37 +378,55 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="qJQ-Mv-heG"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="6.0.23.1" id="0gN-BI-uW4">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="z2I-f1-GOo"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="6.0.23.2" id="6e7-q1-y6s">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="OOb-wU-fnQ"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="6.0.24" id="cPf-aq-OOJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="j6L-qh-bde"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.1.0" id="S53-Fz-VJM">
+                            <menuItem title="6.0.24.1" id="BPd-Jd-G24">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="hbx-pR-ksT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.1.0" id="S53-Fz-VJM">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="rbg-9A-mZL"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.1.1" id="HpA-AZ-qZj">
+                            <menuItem title="CX 6.1.1" id="HpA-AZ-qZj">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="RDc-H7-BvU"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.1.2" id="Ime-EU-OGW">
+                            <menuItem title="CX 6.1.2" id="Ime-EU-OGW">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="2DZ-6b-Bbr"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.2.0" id="lzU-9V-pjv">
+                            <menuItem title="CX 6.2.0" id="lzU-9V-pjv">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="YcW-Ju-Loi"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="6.2.1" id="Prr-df-OEd">
+                            <menuItem title="CX 6.2.1" id="Prr-df-OEd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="4Sz-3e-lWz"/>
@@ -393,7 +442,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="153.5" y="385"/>
+            <point key="canvasLocation" x="153.5" y="405"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
@@ -409,6 +458,12 @@
             <modifierMask key="keyEquivalentModifierMask"/>
             <connections>
                 <action selector="releasePicked:" target="Voe-Tx-rLC" id="a9U-ah-g1m"/>
+            </connections>
+        </menuItem>
+        <menuItem title="6.0.21" id="6vX-ot-0KQ">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="vJw-rb-03S"/>
             </connections>
         </menuItem>
     </objects>
