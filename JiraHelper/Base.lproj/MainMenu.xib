@@ -98,10 +98,10 @@
                         <action selector="openDocTickets:" target="Voe-Tx-rLC" id="hjQ-gq-hyi"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Platform Maint" id="FL4-sf-gVn">
+                <menuItem title="Doc tickets current release" id="FL4-sf-gVn">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="platformMaintClicked:" target="Voe-Tx-rLC" id="Lsm-p4-C5U"/>
+                        <action selector="docsCurrentReleaseClicked:" target="Voe-Tx-rLC" id="Rja-QF-mk7"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="SHi-vK-u2s"/>
@@ -176,6 +176,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="confluenceClicked:" target="Voe-Tx-rLC" id="egz-jK-IP1"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Product Requirements" id="hKv-g6-mOY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="productRequirementsClicked:" target="Voe-Tx-rLC" id="24i-bD-NwV"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Search" id="j9l-jt-fbt">
@@ -408,6 +414,12 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="rbg-9A-mZL"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="CX 6.1.0-beta" id="SSx-vC-QLI">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="Glf-pc-6iM"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="CX 6.1.1" id="HpA-AZ-qZj">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -442,7 +454,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="153.5" y="405"/>
+            <point key="canvasLocation" x="148" y="428"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>

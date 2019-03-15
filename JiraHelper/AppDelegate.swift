@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.2%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.2.0%22"
-    var release = "6.0.24"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.2.0%22"
+    var release = "6.1.0"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -65,12 +65,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func codeFreezeCheckClicked(_ sender: Any) {
-        let jql = "project%20IN%20(BACKLOG%2C%20Maintenance)%20AND%20fixVersion%20%3D%20" + release + "%20AND%20status%20NOT%20IN%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20NOT%20IN%20(Epic%2C%20%22Spike%20Story%22%2C%20Document%2C%20%22Tools%20%26%20Build%22)%20order%20by%20priority%20DESC"
+        let jql = "project%20IN%20(BACKLOG%2C%20Maintenance)%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20NOT%20IN%20(Epic%2C%20%22Spike%20Story%22%2C%20Document%2C%20%22Tools%20%26%20Build%22)%20order%20by%20priority%20DESC"
         openJiraSearchQuery(jql: jql);
     }
     
     @IBAction func fixversionButNoVaClicked(_ sender: Any) {
-        let jql = "project%20%3D%20BACKLOG%20AND%20issuetype%20!%3D%20Document%20AND%20NOT%20labels%20in%20(value-area-experience-platform%2C%20value-area-experience-management)%20AND%20fixversion%20%3D%20" + release + "%20ORDER%20BY%20lastViewed%20DESC"
+        let jql = "project%20%3D%20BACKLOG%20AND%20issuetype%20!%3D%20Document%20AND%20NOT%20labels%20in%20(value-area-experience-platform%2C%20value-area-experience-management)%20AND%20fixversion%20%3D%20%22" + release + "%22%20ORDER%20BY%20lastViewed%20DESC"
         openJiraSearchQuery(jql: jql);
     }
     
@@ -89,10 +89,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openJiraSearchQuery(jql: jql);
     }
     
-    @IBAction func platformMaintClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20labels%20IN%20(value-area-experience-platform)%20AND%20created%20%3C%207d%20ORDER%20BY%20priority"
-        openJiraSearchQuery(jql: jql);
+    @IBAction func docsCurrentReleaseClicked(_ sender: Any) {
+        let url = URL(string:"https://backbase.atlassian.net/issues/?filter=54443")
+        NSWorkspace.shared.open(url!)
     }
+    
+    @IBAction func productRequirementsClicked(_ sender: Any) {
+        let url = URL(string:"https://backbase.atlassian.net/wiki/spaces/PrM/pages/133431577/Product%2BRequirements")
+        NSWorkspace.shared.open(url!)
+    }
+   
+    
     
     func openJiraSearchQuery(jql: String) {
         let url = URL(string: "https://backbase.atlassian.net/issues/?jql=" + jql)
@@ -110,12 +117,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func backlogReleasesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=" + release + "&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
     
     @IBAction func maintReleasesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=" + release + "&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
     
