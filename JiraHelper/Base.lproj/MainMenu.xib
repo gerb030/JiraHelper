@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,33 +15,19 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="JiraHelper" customModuleProvider="target">
             <connections>
-                <outlet property="colossusBoard" destination="v1N-mc-i9a" id="cGf-5Z-3Cd"/>
                 <outlet property="quitButton" destination="Y0j-iX-xku" id="DCk-SL-6aZ"/>
                 <outlet property="quitClicked" destination="Y0j-iX-xku" id="RgI-SJ-qkx"/>
                 <outlet property="releaseMenu" destination="aKN-QK-O4n" id="C5o-nG-0Hr"/>
-                <outlet property="releases" destination="t6a-Nr-ABk" id="Vya-8K-nae"/>
                 <outlet property="statusMenu" destination="u1X-YH-xma" id="sXw-kx-L6F"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="u1X-YH-xma">
             <items>
-                <menuItem title="Generic open tickets" id="SjV-c2-Qlb">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="genericOpenTicketsClicked:" target="Voe-Tx-rLC" id="Sy1-kJ-dEA"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Tickets in release" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="ticketsInReleaseClicked:" target="Voe-Tx-rLC" id="2WO-Qg-dnv"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Backlog open" id="V19-86-DIA">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="backlogOpenClicked:" target="Voe-Tx-rLC" id="1RK-re-jdL"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Blockers" id="BZg-1X-4lq">
@@ -50,28 +36,10 @@
                         <action selector="blockersClicked:" target="Voe-Tx-rLC" id="EpG-Nw-EiJ"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Important Clones" id="0rg-MJ-jzs">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="importantClonesClicked:" target="Voe-Tx-rLC" id="s0A-z3-4Iu"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Clones" id="Yxq-TR-YFy">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="clonesClicked:" target="Voe-Tx-rLC" id="kuG-hn-951"/>
-                    </connections>
-                </menuItem>
                 <menuItem title="Code Freeze Check" id="h2f-hn-9FV">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="codeFreezeCheckClicked:" target="Voe-Tx-rLC" id="NfZ-3x-GJu"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Fixversion but no VA" id="1nX-ra-zAk">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="fixversionButNoVaClicked:" target="Voe-Tx-rLC" id="dgi-Dj-Uyv"/>
                     </connections>
                 </menuItem>
                 <menuItem title="True fixes" id="Ju9-OF-2ln">
@@ -86,10 +54,10 @@
                         <action selector="last1WeekMaintClicked:" target="Voe-Tx-rLC" id="MJB-Gt-7A3"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Last 2 weeks Maint" id="Zyc-QA-3ve">
+                <menuItem title="Doc tickets current release" id="FL4-sf-gVn">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="last2WeeksMaintClicked:" target="Voe-Tx-rLC" id="T5U-Ei-Uq3"/>
+                        <action selector="docsCurrentReleaseClicked:" target="Voe-Tx-rLC" id="Rja-QF-mk7"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Open Doc tickets" id="yqG-Bh-G7h">
@@ -98,47 +66,66 @@
                         <action selector="openDocTickets:" target="Voe-Tx-rLC" id="hjQ-gq-hyi"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Doc tickets current release" id="FL4-sf-gVn">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="docsCurrentReleaseClicked:" target="Voe-Tx-rLC" id="Rja-QF-mk7"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="SHi-vK-u2s"/>
-                <menuItem title="Colossus Board" id="v1N-mc-i9a">
+                <menuItem title="Squad boards" id="xa9-r0-Hd1">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="colossusBoardClicked:" target="Voe-Tx-rLC" id="FdY-wE-ges"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="CMBE Board" id="9Y6-g8-X5Y">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="cmbeBoardClicked:" target="Voe-Tx-rLC" id="96L-j1-aRq"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Spring Boot backlog" id="VJi-TW-tgq">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="springBootBacklogViewClicked:" target="Voe-Tx-rLC" id="4Jb-Q7-gDw"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Backlog Releases" id="3Mh-cI-xph">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="backlogReleasesClicked:" target="Voe-Tx-rLC" id="kZC-wd-XVv"/>
-                    </connections>
+                    <menu key="submenu" title="Squad boards" id="WMv-A8-jg6">
+                        <items>
+                            <menuItem title="Bruce Lean" id="kFY-N0-2jR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="bruceLeanBoard:" target="Voe-Tx-rLC" id="RdE-f4-NFr"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Content" id="ScV-1O-f95">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="contentBoardClicked:" target="Voe-Tx-rLC" id="9Fm-6T-tcd"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX Model" id="xXX-IU-6z3">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="modelClicked:" target="Voe-Tx-rLC" id="vrJ-Qz-dVJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Marketing" id="bQ3-l9-Lve">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="marketingClicked:" target="Voe-Tx-rLC" id="J6D-Lq-3jh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reboot" id="VJi-TW-tgq">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="springBootBacklogViewClicked:" target="Voe-Tx-rLC" id="4Jb-Q7-gDw"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Vision" id="ysk-WC-esT">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="provisioningBacklogViewClicked:" target="Voe-Tx-rLC" id="QQr-54-Wlu"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX QA Board" id="NRi-pi-KHz">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="cxQABoardClicked:" target="Voe-Tx-rLC" id="kch-Ic-FVO"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="GROCX" id="ewX-xA-Z6j">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="grocxViewClicked:" target="Voe-Tx-rLC" id="MBm-CS-ufU"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
                 <menuItem title="Maint Releases" id="dSL-a0-maP">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="maintReleasesClicked:" target="Voe-Tx-rLC" id="o1F-1r-zpn"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Bruce Lean Board" id="kFY-N0-2jR">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="bruceLeanBoard:" target="Voe-Tx-rLC" id="IaL-OB-CBX"/>
                     </connections>
                 </menuItem>
                 <menuItem title="CX Release Board" id="Jy1-V0-YRU">
@@ -157,18 +144,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="pocBoardClicked:" target="Voe-Tx-rLC" id="wal-VN-LIw"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Backlog View" id="ob5-El-S8e">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="backlogViewClicked:" target="Voe-Tx-rLC" id="oz9-VY-FbZ"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="CX QA Board" id="NRi-pi-KHz">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="cxQABoardClicked:" target="Voe-Tx-rLC" id="kch-Ic-FVO"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
@@ -300,66 +275,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Release" id="ctM-9O-PiB">
                         <items>
-                            <menuItem title="6.0.14" id="SrK-CC-8NN">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="1RK-v9-seQ"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.15" id="5ha-L7-7gD">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="ZTF-Pz-VrL"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.15.1" id="AWH-ap-HLL">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="8nI-ge-gnn"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.15.2" id="wNY-gW-Ou3">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="djP-uk-Zek"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.16" id="uH2-7G-GOo">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="hPb-YQ-h17"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.17" id="evm-ql-Lcc">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="8eD-Ap-uD1"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.18" id="vJ9-PH-CSb">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="dG7-dQ-pTx"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.19" id="Rj6-b9-4SJ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="nkm-4w-1Gb"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.19.1" id="wca-ud-92T">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="9kJ-5e-40M"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="6.0.20" id="t6a-Nr-ABk">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="oM3-eF-mFi"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="6.0.21" id="eFh-6v-TlT">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -408,6 +323,18 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="hbx-pR-ksT"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="CX 6.0.24.2" id="0hh-Sd-eVw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="SqP-hY-Lgl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.0.24.3" id="PAN-az-Ryc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="mJX-Qf-BX8"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="CX 6.1.0" id="S53-Fz-VJM">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -432,6 +359,30 @@
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="2DZ-6b-Bbr"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="CX 6.1.3" id="jRR-W8-Xex">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="zuI-xm-Bvm"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.1.4" id="RfB-oQ-6yq">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="SpO-cA-JP2"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.1.5" id="Ia3-Br-iHM">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="kIt-nH-yKD"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.1.6" id="9Jb-hZ-SYN">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="0sL-Am-Cbm"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="CX 6.2.0" id="lzU-9V-pjv">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -442,6 +393,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="releasePicked:" target="Voe-Tx-rLC" id="4Sz-3e-lWz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="CX 6.2.2" id="jou-Rb-FLc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="releasePicked:" target="Voe-Tx-rLC" id="X9l-Xk-aeZ"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -466,16 +423,34 @@
             </textFieldCell>
             <point key="canvasLocation" x="393" y="42"/>
         </textField>
-        <menuItem title="6.1.2" id="ewX-xA-Z6j">
-            <modifierMask key="keyEquivalentModifierMask"/>
-            <connections>
-                <action selector="releasePicked:" target="Voe-Tx-rLC" id="a9U-ah-g1m"/>
-            </connections>
-        </menuItem>
         <menuItem title="6.0.21" id="6vX-ot-0KQ">
             <modifierMask key="keyEquivalentModifierMask"/>
             <connections>
                 <action selector="releasePicked:" target="Voe-Tx-rLC" id="vJw-rb-03S"/>
+            </connections>
+        </menuItem>
+        <menuItem title="6.0.24.1" id="hY0-Ao-6qJ">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="d0d-Tv-IEX"/>
+            </connections>
+        </menuItem>
+        <menuItem title="CX 6.1.2" id="TaQ-6A-3FG">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="5Xn-Xt-rb1"/>
+            </connections>
+        </menuItem>
+        <menuItem title="CX 6.1.3" id="Z4f-0p-oPJ">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="eBh-xB-EkU"/>
+            </connections>
+        </menuItem>
+        <menuItem title="CX 6.1.4" id="OCr-uf-0P7">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releasePicked:" target="Voe-Tx-rLC" id="sZ2-B9-IUo"/>
             </connections>
         </menuItem>
     </objects>

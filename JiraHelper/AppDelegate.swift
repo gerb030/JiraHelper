@@ -18,21 +18,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.2.0%22"
-    var release = "6.1.0"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.1.61%22%2C%20%22CX%206.2.0%22"
+    var release = "CX%206.1.4"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
-    @IBAction func boardColossusClicked(_ sender: Any) {
-        let jql = ""
-        openJiraSearchQuery(jql: jql);
-    }
-    @IBAction func genericOpenTicketsClicked(_ sender: Any) {
-        let jql = "project%20IN%20(MAINT%2C%20Backlog)%20AND%20status%20not%20in%20(done%2C%20closed%2C%20resolved)%20ORDER%20BY%20priority%20DESC%2C%20updated%20DESC"
-        openJiraSearchQuery(jql: jql);
-    }
+
     @IBAction func ticketsInReleaseClicked(_ sender: Any) {
-        let jql = "project%20IN%20(Backlog%2C%20MAINT)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20order%20by%20lastViewed%20DESC"
+        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20and%20%22Backlog%20Link%22%20IN%20(%22Experience%20Model%22%2C%20%22Provisioning%20%26%20SDLC%22%2C%20%22CX%20Marketing%22%2C%20Content%2C%20Cloud%2C%20%22Lean%20Client%22)%20)%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20"
         openJiraSearchQuery(jql: jql);
     }
 
@@ -42,40 +35,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openJiraSearchQuery(jql: jql);
     }
 
-
-    
-    @IBAction func backlogOpenClicked(_ sender: Any) {
-        let jql = "project%20IN%20(BACKLOG)%20AND%20affectedVersion%20IN%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Done%2C%20Resolved%2C%20Closed)%20order%20by%20priority%20DESC"
-        openJiraSearchQuery(jql: jql);
-    }
     
     @IBAction func blockersClicked(_ sender: Any) {
         let jql = "priority%20%3D%20Blocker%20AND%20(affectedVersion%20in%20("+allOldVersions+"))%20AND%20status%20not%20in%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20not%20in%20(Epic)%20ORDER%20BY%20created%20ASC"
         openJiraSearchQuery(jql: jql);
     }
     
-    @IBAction func importantClonesClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint%2C%20backlog)%20AND%20summary%20~%20clone%20AND%20status%20not%20in%20(done%2C%20closed%2C%20resolved)%20AND%20issuetype%20not%20in%20(epic%2C%20subTaskIssueTypes())%20and%20priority%20in%20(critical%2C%20blocker)%20ORDER%20BY%20priority%20DESC%2C%20lastViewed%20DESC"
-        openJiraSearchQuery(jql: jql);
-    }
-    
-    @IBAction func clonesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/346587688")
-        NSWorkspace.shared.open(url!)
-    }
-    
+
     @IBAction func codeFreezeCheckClicked(_ sender: Any) {
-        let jql = "project%20IN%20(BACKLOG%2C%20Maintenance)%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20NOT%20IN%20(Epic%2C%20%22Spike%20Story%22%2C%20Document%2C%20%22Tools%20%26%20Build%22)%20order%20by%20priority%20DESC"
-        openJiraSearchQuery(jql: jql);
-    }
-    
-    @IBAction func fixversionButNoVaClicked(_ sender: Any) {
-        let jql = "project%20%3D%20BACKLOG%20AND%20issuetype%20!%3D%20Document%20AND%20NOT%20labels%20in%20(value-area-experience-platform%2C%20value-area-experience-management)%20AND%20fixversion%20%3D%20%22" + release + "%22%20ORDER%20BY%20lastViewed%20DESC"
-        openJiraSearchQuery(jql: jql);
+        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20and%20%22Backlog%20Link%22%20IN%20(%22Experience%20Model%22%2C%20%22Provisioning%20%26%20SDLC%22%2C%20%22CX%20Marketing%22%2C%20Content%2C%20Cloud%2C%20%22Lean%20Client%22)%20)%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Closed%2C%20Resolved)";        openJiraSearchQuery(jql: jql);
     }
     
     @IBAction func trueFixesClicked(_ sender: Any) {
-        let jql = "project%20IN%20(Backlog%2C%20MAINT)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
+        let jql =
+           "project%20IN%20(BACKLOG%2C%20MAINT%2C%20GROCX%2C%20%22Experience%20Model%22%2C%20CXMF%2C%20%22CX%20Marketing%22%2C%20Content%2C%20%22Provisioning%20%26%20SDLC%22%2C%20Cloud)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
         openJiraSearchQuery(jql: jql);
     }
     
@@ -83,11 +56,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3E%20-7d%20ORDER%20BY%20priority"
         openJiraSearchQuery(jql: jql);
     }
-    
-    @IBAction func last2WeeksMaintClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3E%20-14d%20ORDER%20BY%20priority"
-        openJiraSearchQuery(jql: jql);
-    }
+
     
     @IBAction func docsCurrentReleaseClicked(_ sender: Any) {
         let url = URL(string:"https://backbase.atlassian.net/issues/?filter=54443")
@@ -98,34 +67,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string:"https://backbase.atlassian.net/wiki/spaces/PrM/pages/133431577/Product%2BRequirements")
         NSWorkspace.shared.open(url!)
     }
-   
-    
     
     func openJiraSearchQuery(jql: String) {
         let url = URL(string: "https://backbase.atlassian.net/issues/?jql=" + jql)
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func colossusBoardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=853")
+    @IBAction func contentBoardClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1095&projectKey=CONTENT")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func cmbeBoardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=842")
+    @IBAction func modelClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1093")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func backlogReleasesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+    
+    @IBAction func marketingClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1078&view=planning.nodetail")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func springBootBacklogViewClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1012&view=planning.nodetail")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func provisioningBacklogViewClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1092&view=planning.nodetail")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func grocxViewClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1134&view=planning.nodetail")
         NSWorkspace.shared.open(url!)
     }
     
     @IBAction func maintReleasesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/BACKLOG?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        let url = URL(string: "https://backbase.atlassian.net/projects/MAINT?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
-    
     
     @IBAction func bruceLeanBoard(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=872")
@@ -147,21 +129,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func backlogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=853&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-
     @IBAction func cxQABoardClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=853&view=planning.nodetail")
         NSWorkspace.shared.open(url!)
     }
-    
-    @IBAction func springBootBacklogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1012&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-    
+
     
     @IBAction func confluenceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/my/recent-work")
@@ -180,11 +152,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func gocdClicked(_ sender: Any) {
         let url = URL(string: "https://gocd.backbase.com")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func checkmarxClicked(_ sender: Any) {
-        let url = URL(string: "https://checkmarx.backbase.com")
         NSWorkspace.shared.open(url!)
     }
     
