@@ -147,6 +147,9 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
+                <menuItem title="CS sheet" id="Y37-qS-IEx">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
                 <menuItem title="Confluence" id="vVp-Jp-0vB">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -411,7 +414,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="148" y="428"/>
+            <point key="canvasLocation" x="148" y="418"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>

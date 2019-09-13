@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.1.61%22%2C%20%22CX%206.2.0%22"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%2C%20%22CX%206.0.24.4%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.1.6%22%2C%20%22CX%206.2.0%22"
     var release = "CX%206.1.4"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
@@ -43,12 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
 
     @IBAction func codeFreezeCheckClicked(_ sender: Any) {
-        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20and%20%22Backlog%20Link%22%20IN%20(%22Experience%20Model%22%2C%20%22Provisioning%20%26%20SDLC%22%2C%20%22CX%20Marketing%22%2C%20Content%2C%20Cloud%2C%20%22Lean%20Client%22)%20)%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Closed%2C%20Resolved)";        openJiraSearchQuery(jql: jql);
+        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20AND%20(%22Backlog%20Link%22%20IN%20(%22Product%20Backlog%22%2C%20Content%2C%20%22Experience%20Model%22%2C%22Provisioning%20%26%20SDLC%22%2CCloud%2C%22CX%20Marketing%22%2C%20%22CX%20Untrack%22%20)))%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Closed%2C%20Resolved)";        openJiraSearchQuery(jql: jql);
     }
     
     @IBAction func trueFixesClicked(_ sender: Any) {
         let jql =
-           "project%20IN%20(BACKLOG%2C%20MAINT%2C%20GROCX%2C%20%22Experience%20Model%22%2C%20CXMF%2C%20%22CX%20Marketing%22%2C%20Content%2C%20%22Provisioning%20%26%20SDLC%22%2C%20Cloud)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
+           "project%20IN%20(BACKLOG%2C%20MAINT%2C%20GROCX%2C%20%22Experience%20Model%22%2C%20CXMF%2C%20%22CX%20Marketing%22%2C%20Content%2C%20%22Provisioning%20%26%20SDLC%22%2C%20Cloud)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
         openJiraSearchQuery(jql: jql);
     }
     
