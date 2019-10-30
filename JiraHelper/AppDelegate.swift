@@ -18,8 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%22%2C%20%22CX%206.0.24.4%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.1.6%22%2C%20%22CX%206.2.0%22"
-    var release = "CX%206.1.4"
+    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%22%2C%20%22CX%206.0.24.4%22%2C%20%22CX%20CX 6.0.24.5%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.2.0%22"
+    var release = "CX%206.2.0"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
@@ -53,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func last1WeekMaintClicked(_ sender: Any) {
-        let jql = "project%20in%20(maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20created%20%3E%20-7d%20ORDER%20BY%20priority"
+        let jql = "project%20%3D%20Maintenance%20AND%20filter%20in%20(55444%2C%2055462%2C%2055443%2C%2055463)%20AND%20status%20not%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20created%20%3E%20-7d"
         openJiraSearchQuery(jql: jql);
     }
 
@@ -103,6 +103,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1134&view=planning.nodetail")
         NSWorkspace.shared.open(url!)
     }
+    
+    @IBAction func devopsBacklogViewClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1092&view=planning&quickFilter=6814")
+        NSWorkspace.shared.open(url!)
+    }
+        
     
     @IBAction func maintReleasesClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/projects/MAINT?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")

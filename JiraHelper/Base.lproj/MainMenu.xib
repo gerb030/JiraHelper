@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -119,6 +119,12 @@
                                     <action selector="grocxViewClicked:" target="Voe-Tx-rLC" id="MBm-CS-ufU"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Devops backlog" id="ZIS-wL-cLw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="devopsBacklogViewClicked:" target="Voe-Tx-rLC" id="Hfh-mc-0ur"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -147,9 +153,6 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
-                <menuItem title="CS sheet" id="Y37-qS-IEx">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
                 <menuItem title="Confluence" id="vVp-Jp-0vB">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -414,7 +417,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="148" y="418"/>
+            <point key="canvasLocation" x="148" y="428"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
