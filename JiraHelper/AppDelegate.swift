@@ -175,6 +175,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://community.backbase.com/d/retirement/")
         NSWorkspace.shared.open(url!)
     }
+
+    @IBAction func expensesClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/306050644/Expensify+-+How+to+charge+expenses")
+        NSWorkspace.shared.open(url!)
+    }
     
     @IBAction func slaClicked(_ sender: Any) {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1rwjJV5LoT8W-ed1KtijKSoiFuCAFfxixo6-OTaE2nnk/edit#gid=1642126855")

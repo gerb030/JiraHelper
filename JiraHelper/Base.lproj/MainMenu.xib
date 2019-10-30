@@ -273,6 +273,12 @@
                                     <action selector="deliveryGuildSpaceClicked:" target="Voe-Tx-rLC" id="E4O-zV-veN"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Expenses" id="U6t-jO-NC2">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="expensesClicked:" target="Voe-Tx-rLC" id="gdG-Rv-PCF"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                 </menuItem>
@@ -417,7 +423,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="148" y="428"/>
+            <point key="canvasLocation" x="150" y="475"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
