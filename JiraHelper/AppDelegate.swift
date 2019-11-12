@@ -156,6 +156,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func jenkinsClicked(_ sender: Any) {
+        let url = URL(string: "https://jenkins.backbase.eu/blue/organizations/jenkins/Tribe%20X%2FCXP-AUTO%2Fcx-ondemand-env/activity/")
+        NSWorkspace.shared.open(url!)
+    }
+    
     @IBAction func gocdClicked(_ sender: Any) {
         let url = URL(string: "https://gocd.backbase.com")
         NSWorkspace.shared.open(url!)

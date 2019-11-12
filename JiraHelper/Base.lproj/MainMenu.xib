@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -178,6 +178,12 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="qaS-Kk-w3O"/>
+                <menuItem title="Jenkins (k8s)" id="xbr-Gm-Gek">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="jenkinsClicked:" target="Voe-Tx-rLC" id="meV-Ts-mX0"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="GoCD" id="u0S-uc-iqv">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -423,7 +429,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="150" y="475"/>
+            <point key="canvasLocation" x="150" y="481"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
