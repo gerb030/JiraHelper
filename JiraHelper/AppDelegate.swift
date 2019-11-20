@@ -90,7 +90,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func springBootBacklogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1012&view=planning.nodetail")
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1100&projectKey=CXCLOUD")
         NSWorkspace.shared.open(url!)
     }
     
@@ -191,6 +191,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+// Customer spaces
+
+     @IBAction func keybankSharedSpaceClicked(_ sender: Any) {
+         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/ES/pages/1485505290/R+D+Keybank")
+         NSWorkspace.shared.open(url!)
+     }
+     
+    @IBAction func rbcSharedSpaceClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/BRRS/overview")
+        NSWorkspace.shared.open(url!)
+    }
+ 
+    
     @IBAction func deliveryGuildSpaceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/GUIL/pages/405438486/Delivery+Guild")
         NSWorkspace.shared.open(url!)
@@ -223,7 +236,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func recruitmentList(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1xOBRFlHnUxKXTUTcFL51ixsNi51Efs0hCNdapnIW4Jo/edit?usp=sharing")
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1KUe3QJXPndtJhCox6XRj9m83nNIFzy2CABSEbQ74zyQ/edit?ts=5d822039#gid=929738988")
         NSWorkspace.shared.open(url!)
     }
     

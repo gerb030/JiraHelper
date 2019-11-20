@@ -215,6 +215,25 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Omf-X0-H6R"/>
+                <menuItem title="Customer Spaces" id="gWm-dm-VnP">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Customer Spaces" id="Wyy-83-9rQ">
+                        <items>
+                            <menuItem title="Keybank" id="COJ-4m-YRp">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="keybankSharedSpaceClicked:" target="Voe-Tx-rLC" id="IPb-Dd-sQz"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="RBC" id="SmQ-Jo-tKi">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="rbcSharedSpaceClicked:" target="Voe-Tx-rLC" id="5pe-zu-dXI"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
                 <menuItem title="Staffing and Reports" id="zhU-W0-jV3">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Staffing and Reports" id="OOz-MW-CAg">
@@ -249,7 +268,7 @@
                                     <action selector="joinersLeaversList:" target="Voe-Tx-rLC" id="WgZ-DE-V8X"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Recruitment list" id="z9N-rF-OnP">
+                            <menuItem title="FTE overview / Recruitment" id="z9N-rF-OnP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="recruitmentList:" target="Voe-Tx-rLC" id="j9E-sL-opM"/>
@@ -429,7 +448,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="150" y="481"/>
+            <point key="canvasLocation" x="151" y="524"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
