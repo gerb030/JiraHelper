@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import os
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -18,107 +19,66 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBOutlet weak var releases: NSMenuItem!
     
-    let allOldVersions = "6.0.x%2C%206.x%2C%206.0.1%2C%206.0.2%2C%206.0.3%2C%206.0.4%2C%206.0.5%2C%206.0.6%2C%206.0.7%2C%206.0.8%2C%206.0.9%2C%206.0.10%2C%206.0.11%2C%206.0.12%2C%206.0.13%2C%206.0.14%2C%206.0.15%2C%206.0.15.1%2C%206.0.15.2%2C%206.0.16%2C%206.0.17%2C%206.0.18%2C%206.0.19%2C%206.0.19.1%2C%206.0.20%2C%206.0.21%2C%206.0.21.1%2C%206.0.22%2C%206.0.23%2C%206.0.23.1%2C%206.0.23.2%2C%206.0.24%2C%206.0.24.1%2C%20%22CX%206.0.24.2%22%2C%20%22CX%206.0.24.3%22%2C%20%22CX%206.0.24.4%22%2C%20%22CX%20CX 6.0.24.5%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.2.0%22"
-    var release = "CX%206.2.0"
+    let allOldVersions = "6.0.x%2C%206.x%2C%20%22CX%20CX 6.0.24.5%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.0-beta%22%2C%20%22CX%206.1.0%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.1%22%2C%20%22CX%206.1.2%22%2C%20%22CX%206.1.3%22%2C%20%22CX%206.1.4%22%2C%20%22CX%206.1.5%22%2C%20%22CX%206.2.0%22%2C%20%22CX%206.2.1%22%22%2C%20%22CX%206.2.2%22%22%2C%20%22CX%206.2.3%22%22%2C%20%22CX%206.2.4%22%22%2C%20%22CX%206.2.5%22%22%2C%20%22CX%206.2.5.1%22%22%2C%20%22CX%206.2.5.2%22%22%2C%20%22CX%206.2.5.3%22%22%2C%20%22CX%206.2.5.4%22%22%2C%20%22CX%206.2.5.5%22%22%2C%20%22CX%206.2.5.6%22%22%2C%20%22CX%206.2.5.7%22%22%2C%20%22CX%206.2.6%22%22%2C%20%22CX%206.2.6.1%22%22%2C%20%22CX%206.2.7%22%22%2C%20%22CX%206.2.8%22%22%2C%20%22CX%206.2.9%22%22%2C%20%22CX%206.2.9.1%22%22%2C%20%22CX%206.2.10%22%22%2C%20%22CX%206.2.10.1%22%22%2C%20%22CX%206.3.0%22%22%2C%20%22CX%206.3.0.1%22%22%2C%20%22CX%206.3.1%22%22%2C%20%22CX%206.3.1.1%22%22%2C%20%22CX%206.3.2%22%22%2C%20%22CX%206.3.3%22%22%2C%20%22CX%206.3.4%22"
+    var release = "CX%206.3.3"
 
     @IBOutlet weak var colossusBoard: NSMenuItem!
     
 
     @IBAction func ticketsInReleaseClicked(_ sender: Any) {
-        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20and%20%22Backlog%20Link%22%20IN%20(%22Experience%20Model%22%2C%20%22Provisioning%20%26%20SDLC%22%2C%20%22CX%20Marketing%22%2C%20Content%2C%20Cloud%2C%20%22Lean%20Client%22)%20)%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20"
-        openJiraSearchQuery(jql: jql);
+        let url = URL(string: "https://backbase.atlassian.net/issues/?filter=55059")
+        NSWorkspace.shared.open(url!)
     }
 
     
     @IBAction func openDocTickets(_ sender: Any) {
-        let jql = "project%20in%20(backlog%2C%20DOC%2C%20maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20issuetype%20%3D%20Document%20ORDER%20BY%20priority"
+        let jql = "project%20in%20(DOC%2C%20maint)%20AND%20affectedVersion%20in%20("+allOldVersions+")%20AND%20status%20NOT%20IN%20(Resolved%2C%20Done%2C%20Closed)%20AND%20issuetype%20%3D%20Document%20ORDER%20BY%20priority"
         openJiraSearchQuery(jql: jql);
     }
 
     
     @IBAction func blockersClicked(_ sender: Any) {
-        let jql = "priority%20%3D%20Blocker%20AND%20(affectedVersion%20in%20("+allOldVersions+"))%20AND%20status%20not%20in%20(Done%2C%20Resolved%2C%20Closed)%20AND%20issuetype%20not%20in%20(Epic)%20ORDER%20BY%20created%20ASC"
-        openJiraSearchQuery(jql: jql);
+        let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35186")
+        NSWorkspace.shared.open(url!)
     }
     
 
     @IBAction func codeFreezeCheckClicked(_ sender: Any) {
-        let jql = "(project%20IN%20(Lean%2C%20Cloud%2C%20Content%2C%20%22CX%20Marketing%22%2C%20CXMODEL%2C%20CXPROV)%20OR%20project%20%3D%20MAINT%20AND%20(%22Backlog%20Link%22%20IN%20(%22Product%20Backlog%22%2C%20Content%2C%20%22Experience%20Model%22%2C%22Provisioning%20%26%20SDLC%22%2CCloud%2C%22CX%20Marketing%22%2C%20%22CX%20Untrack%22%20)))%20AND%20issuetype%20NOT%20IN%20(Document)%20AND%20fixversion%20%3D%20%22" + release + "%22%20AND%20status%20NOT%20IN%20(Done%2C%20Closed%2C%20Resolved)";        openJiraSearchQuery(jql: jql);
+        let url = URL(string: "https://backbase.atlassian.net/issues/?filter=55728")
+        NSWorkspace.shared.open(url!)
+    }
+    
+    @IBAction func MaintDashboardClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35186")
+        NSWorkspace.shared.open(url!)
     }
     
     @IBAction func trueFixesClicked(_ sender: Any) {
         let jql =
-           "project%20IN%20(BACKLOG%2C%20MAINT%2C%20GROCX%2C%20%22Experience%20Model%22%2C%20CXMF%2C%20%22CX%20Marketing%22%2C%20Content%2C%20%22Provisioning%20%26%20SDLC%22%2C%20Cloud)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
+           "project%20NOT%20IN%20(CX)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
         openJiraSearchQuery(jql: jql);
     }
     
     @IBAction func last1WeekMaintClicked(_ sender: Any) {
-        let jql = "project%20%3D%20Maintenance%20AND%20filter%20in%20(55444%2C%2055462%2C%2055443%2C%2055463)%20AND%20status%20not%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20created%20%3E%20-7d"
+        let jql = "filter%20in%20(56564)%20AND%20status%20not%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20created%20%3E%20-7d"
         openJiraSearchQuery(jql: jql);
     }
-
     
     @IBAction func docsCurrentReleaseClicked(_ sender: Any) {
-        let url = URL(string:"https://backbase.atlassian.net/issues/?filter=54443")
+        let url = URL(string:"https://backbase.atlassian.net/issues/?filter=56109")
         NSWorkspace.shared.open(url!)
     }
-    
-    @IBAction func productRequirementsClicked(_ sender: Any) {
-        let url = URL(string:"https://backbase.atlassian.net/wiki/spaces/PrM/pages/133431577/Product%2BRequirements")
-        NSWorkspace.shared.open(url!)
-    }
-    
+        
     func openJiraSearchQuery(jql: String) {
         let url = URL(string: "https://backbase.atlassian.net/issues/?jql=" + jql)
         NSWorkspace.shared.open(url!)
     }
-    
-    @IBAction func contentBoardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1095&projectKey=CONTENT")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func modelClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1093")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    
-    @IBAction func marketingClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1078&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func springBootBacklogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1100&projectKey=CXCLOUD")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func provisioningBacklogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1092&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func grocxViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1134&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func devopsBacklogViewClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1092&view=planning&quickFilter=6814")
-        NSWorkspace.shared.open(url!)
-    }
-        
     
     @IBAction func maintReleasesClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/projects/MAINT?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func bruceLeanBoard(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=872")
-        NSWorkspace.shared.open(url!)
-    }
     
     @IBAction func releaseBoard(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=955&projectKey=CX")
@@ -130,19 +90,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func pocBoardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=865")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func cxQABoardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=853&view=planning.nodetail")
-        NSWorkspace.shared.open(url!)
-    }
-
-    
     @IBAction func confluenceClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/my/recent-work")
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/DE/overview")
         NSWorkspace.shared.open(url!)
     }
     
@@ -160,19 +109,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://jenkins.backbase.eu/blue/organizations/jenkins/Tribe%20X%2FCXP-AUTO%2Fcx-ondemand-env/activity/")
         NSWorkspace.shared.open(url!)
     }
-    
-    @IBAction func gocdClicked(_ sender: Any) {
-        let url = URL(string: "https://gocd.backbase.com")
-        NSWorkspace.shared.open(url!)
-    }
-    
+        
     @IBAction func blackduckClicked(_ sender: Any) {
         let url = URL(string: "https://black-duck.backbase.com")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    @IBAction func sonarClicked(_ sender: Any) {
-        let url = URL(string: "https://sonar.backbase.com")
         NSWorkspace.shared.open(url!)
     }
     
@@ -187,22 +126,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func slaClicked(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1rwjJV5LoT8W-ed1KtijKSoiFuCAFfxixo6-OTaE2nnk/edit#gid=1642126855")
+        let url = URL(string: "https://community.backbase.com/documentation/cxs/latest/retirement")
         NSWorkspace.shared.open(url!)
     }
-    
-// Customer spaces
-
-     @IBAction func keybankSharedSpaceClicked(_ sender: Any) {
-         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/ES/pages/1485505290/R+D+Keybank")
-         NSWorkspace.shared.open(url!)
-     }
-     
-    @IBAction func rbcSharedSpaceClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/BRRS/overview")
-        NSWorkspace.shared.open(url!)
-    }
- 
     
     @IBAction func deliveryGuildSpaceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/GUIL/pages/405438486/Delivery+Guild")
@@ -210,33 +136,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @IBAction func netsuiteClicked(_ sender: Any) {
-        let url = URL(string: "https://system.eu2.netsuite.com/app/center/card.nl?sc=-29&whence=")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func tribeStatusReportClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/346587688")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func cxBudgetting(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1dJl8dCv1w0IOITclt_y9Fc4YvxC41BDzQR0MgB9QkWk/edit#gid=364681628")
+        let url = URL(string: "https://accounts.google.com/o/saml2/initsso?idpid=C01fqlfbi&spid=434587444047&forceauthn=false")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func staffingPlan(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1mQVkZL4QO6qLszjn8h8HkLMiVp7uA1bwxFBGJxYsPmg/edit#gid=1654045633")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func joinersLeaversList(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1EtZnT2AL5Ru3_0wqKtzXI4jGex9VgGAOA6E0NdhRgyo/edit?ts=5b55a2e9#gid=0")
-        NSWorkspace.shared.open(url!)
-    }
-    
-    
-    @IBAction func recruitmentList(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1KUe3QJXPndtJhCox6XRj9m83nNIFzy2CABSEbQ74zyQ/edit?ts=5d822039#gid=929738988")
+    @IBAction func FTEoverview(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1KUe3QJXPndtJhCox6XRj9m83nNIFzy2CABSEbQ74zyQ/edit?ts=5d822039#gid=473843856")
         NSWorkspace.shared.open(url!)
     }
     
@@ -245,15 +150,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func confluenceIdentity(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/ID/overview")
-        NSWorkspace.shared.open(url!)
-    }
-
-    @IBAction func confluenceCX(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/development/overview")
-        NSWorkspace.shared.open(url!)
-    }
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {
