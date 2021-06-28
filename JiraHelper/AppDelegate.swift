@@ -149,7 +149,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/RND/pages/221938570/R+D+Members")
         NSWorkspace.shared.open(url!)
     }
+
+    @IBAction func confluenceDeSpace(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/DE/overview")
+        NSWorkspace.shared.open(url!)
+    }
+
     
+    @IBAction func signUpSheet(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1jx8qoviNvp5CHv1Z2Cwp67MWT3maVso6JPSxdfC5IzA/edit#gid=954708331")
+        NSWorkspace.shared.open(url!)
+    }
+
     
     @IBAction func releasePicked(_ sender: NSMenuItem) {
 //        for menuItem in releaseMenu.() as! [NSMenuItem] {

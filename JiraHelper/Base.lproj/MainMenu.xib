@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -111,6 +111,12 @@
                         <action selector="jenkinsClicked:" target="Voe-Tx-rLC" id="meV-Ts-mX0"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Sign up sheet" id="aOk-Zh-rxH">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="signUpSheet:" target="Voe-Tx-rLC" id="5Rm-sD-uIa"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Blackduck" id="EMR-24-CeX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -154,7 +160,7 @@
                             <menuItem title="DE Space" id="SKq-TR-b5M">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="confluenceCX:" target="Voe-Tx-rLC" id="f08-9w-za1"/>
+                                    <action selector="confluenceDeSpace:" target="Voe-Tx-rLC" id="1bB-m2-oai"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Delivery Guild space" id="PHe-Gb-r6f">
