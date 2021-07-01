@@ -85,6 +85,24 @@
                         <action selector="releaseList:" target="Voe-Tx-rLC" id="iX6-od-nDs"/>
                     </connections>
                 </menuItem>
+                <menuItem title="MAINT Dashboard" id="p5C-VL-Qxv">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="maintDashboardClicked:" target="Voe-Tx-rLC" id="eN2-ee-9Eo"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="DE VS Goals Dashboard" id="TnL-08-pcJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="devsDashboardClicked:" target="Voe-Tx-rLC" id="hoK-nN-qI6"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="DE VS Goals Report" id="6hR-T2-wuW">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="devsGoalsReportClicked:" target="Voe-Tx-rLC" id="LfA-YS-GT7"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="iMB-vN-XsC"/>
                 <menuItem title="Confluence" id="vVp-Jp-0vB">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -161,6 +179,18 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="confluenceDeSpace:" target="Voe-Tx-rLC" id="1bB-m2-oai"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="DE Team Management Overview" id="4zv-Yg-y39">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="devsTeamManagement:" target="Voe-Tx-rLC" id="mOH-Id-64x"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="DE Gerb People Overview" id="Ymf-WZ-lVG">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="devsGerbPeople:" target="Voe-Tx-rLC" id="H2n-yh-xuS"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Delivery Guild space" id="PHe-Gb-r6f">
@@ -373,6 +403,12 @@
                     </menuItem>
                 </items>
             </menu>
+        </menuItem>
+        <menuItem title="CX Releases list" id="leK-Gv-ugC">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="releaseList:" target="Voe-Tx-rLC" id="OcJ-h2-BsF"/>
+            </connections>
         </menuItem>
     </objects>
 </document>

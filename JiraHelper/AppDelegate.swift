@@ -89,6 +89,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let url = URL(string: "https://backbase.atlassian.net/projects/CX?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
+
+    @IBAction func maintDashboardClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35186")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func devsDashboardClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35297")
+        NSWorkspace.shared.open(url!)
+    }
+
+    
+    @IBAction func devsGoalsReportClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=1580&projectKey=GROCX&view=reporting&chart=cumulativeFlowDiagram&swimlane=3093&swimlane=3092&column=14349&column=14350&column=14351")
+        NSWorkspace.shared.open(url!)
+    }
+
+    
+    @IBAction func devsTeamManagement(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1r3kk0RDWaGVTDctJ4FAxzqraXaanNYR_uDYBxsEook0/edit#gid=1176460641")
+        NSWorkspace.shared.open(url!)
+    }
+
+    @IBAction func devsGerbPeople(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1mHwA4Ku4tgRTGqYAdJyxdP_w1vF2OmK5HyReEOlF-LM/edit#gid=0")
+        NSWorkspace.shared.open(url!)
+    }
+
     
     @IBAction func confluenceClicked(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/DE/overview")
