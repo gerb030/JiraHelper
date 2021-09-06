@@ -106,6 +106,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
 
+    @IBAction func peakonPage(_ sender: Any) {
+        let url = URL(string: "https://miro.com/app/board/o9J_l7P4n1M=/")
+        NSWorkspace.shared.open(url!)
+    }
     
     @IBAction func devsTeamManagement(_ sender: Any) {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1r3kk0RDWaGVTDctJ4FAxzqraXaanNYR_uDYBxsEook0/edit#gid=1176460641")

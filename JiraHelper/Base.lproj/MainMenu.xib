@@ -110,6 +110,12 @@
                         <action selector="confluenceClicked:" target="Voe-Tx-rLC" id="egz-jK-IP1"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Peakon" id="rEC-vS-ndq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="peakonPage:" target="Voe-Tx-rLC" id="XxI-DE-rct"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Search" id="j9l-jt-fbt">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
