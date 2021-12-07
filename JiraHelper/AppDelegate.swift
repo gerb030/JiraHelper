@@ -111,6 +111,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func goalsWoWPage(_ sender: Any) {
+        let url = URL(string:
+    "https://backbase.atlassian.net/wiki/spaces/DE/pages/2572583992/Maintaining+and+Updating+the+Product+Plan")
+        NSWorkspace.shared.open(url!)
+    }
+    
     @IBAction func devsTeamManagement(_ sender: Any) {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1r3kk0RDWaGVTDctJ4FAxzqraXaanNYR_uDYBxsEook0/edit#gid=1176460641")
         NSWorkspace.shared.open(url!)
