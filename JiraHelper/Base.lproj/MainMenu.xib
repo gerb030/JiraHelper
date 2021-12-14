@@ -122,10 +122,10 @@
                         <action selector="goalsWoWPage:" target="Voe-Tx-rLC" id="O6D-po-F5U"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Search" id="j9l-jt-fbt">
+                <menuItem title="Search" id="Q10-xJ-qiD">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="searchClicked:" target="Voe-Tx-rLC" id="kxi-HL-WMs"/>
+                        <action selector="searchClicked:" target="Voe-Tx-rLC" id="j3j-BP-Jlf"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Personal page" id="Ol2-BN-3do">
@@ -173,6 +173,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="netsuiteClicked:" target="Voe-Tx-rLC" id="Fag-SH-ngJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Recruiters Overview" id="j9l-jt-fbt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="recruitmentOverview:" target="Voe-Tx-rLC" id="JNt-rK-Co9"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="FTE overview" id="HGQ-4o-gJi">
