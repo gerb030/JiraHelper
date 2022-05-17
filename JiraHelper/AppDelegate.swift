@@ -37,35 +37,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     
-    @IBAction func blockersClicked(_ sender: Any) {
+    @IBAction func MaintJiraDashboard(_ sender: Any) {
         let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35186")
         NSWorkspace.shared.open(url!)
     }
     
 
-    @IBAction func codeFreezeCheckClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/issues/?filter=55728")
+    @IBAction func techMaturitySheetClicked(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1XOXLf8QLKiSggHGK3OoxSmofuhKVz81_5gbhyBu7b98/edit#gid=0")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func MaintDashboardClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/Dashboard.jspa?selectPageId=35186")
+    @IBAction func DeVSBoardClicked(_ sender: Any) {
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1WVJ0z6j_edBRx8UI6Q_FZSnvAYZfU6DNBudbH_rcYDM/edit#gid=340895682")
         NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func trueFixesClicked(_ sender: Any) {
-        let jql =
-           "project%20NOT%20IN%20(CX)%20AND%20issuetype%20!%3D%20Epic%20AND%20fixVersion%20%3D%20%22" + release + "%22%20AND%20Status%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20resolution%20IN%20(Fixed%2C%20Resolved)%20order%20by%20lastViewed%20DESC"
-        openJiraSearchQuery(jql: jql);
+    @IBAction func TMMCriteriaClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/GUIL/pages/3545399452/Reference+Technical+Maturity+Criteria")
+        NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func last1WeekMaintClicked(_ sender: Any) {
-        let jql = "filter%20in%20(56564)%20AND%20status%20not%20in%20(Done%2C%20Closed%2C%20Resolved)%20AND%20created%20%3E%20-7d"
-        openJiraSearchQuery(jql: jql);
+    @IBAction func whosWhoClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/wiki/spaces/DE/pages/2369946220/Who+s+who+in+Developer+Enablement")
+        NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func docsCurrentReleaseClicked(_ sender: Any) {
-        let url = URL(string:"https://backbase.atlassian.net/issues/?filter=56109")
+    @IBAction func gerbPeopleMgtClicked(_ sender: Any) {
+        let url = URL(string:"https://docs.google.com/spreadsheets/d/1mHwA4Ku4tgRTGqYAdJyxdP_w1vF2OmK5HyReEOlF-LM/edit#gid=0")
         NSWorkspace.shared.open(url!)
     }
         
@@ -75,18 +74,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func maintReleasesClicked(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/MAINT?contains=%22" + release + "%22&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+        let url = URL(string: "https://backbase.atlassian.net/projects/MAINT?&orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
         NSWorkspace.shared.open(url!)
     }
     
     
-    @IBAction func releaseBoard(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/secure/RapidBoard.jspa?rapidView=955&projectKey=CX")
+    @IBAction func maintProjectConfigClick(_ sender: Any) {
+        let url = URL(string: "https://backbase.atlassian.net/plugins/servlet/project-config/MAINT/people")
     NSWorkspace.shared.open(url!)
     }
     
-    @IBAction func releaseList(_ sender: Any) {
-        let url = URL(string: "https://backbase.atlassian.net/projects/CX?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased")
+    @IBAction func devsMtMiro(_ sender: Any) {
+        let url = URL(string: "https://miro.com/app/board/uXjVOQC1aeU=/?moveToWidget=3458764518958265091&cot=14")
         NSWorkspace.shared.open(url!)
     }
 
@@ -128,8 +127,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
 
-    @IBAction func devsGerbPeople(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1mHwA4Ku4tgRTGqYAdJyxdP_w1vF2OmK5HyReEOlF-LM/edit#gid=0")
+    @IBAction func leapsomeClicked(_ sender: Any) {
+        let url = URL(string: "https://www.leapsome.com/app/#/profile/60dc61f0483d305ef22bd29f?init=true")
         NSWorkspace.shared.open(url!)
     }
 
@@ -154,8 +153,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
         
-    @IBAction func blackduckClicked(_ sender: Any) {
-        let url = URL(string: "https://black-duck.backbase.com")
+    @IBAction func bambooClicked(_ sender: Any) {
+        let url = URL(string: "https://backbase.bamboohr.com")
         NSWorkspace.shared.open(url!)
     }
     
@@ -201,7 +200,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     
     @IBAction func signUpSheet(_ sender: Any) {
-        let url = URL(string: "https://docs.google.com/spreadsheets/d/1jx8qoviNvp5CHv1Z2Cwp67MWT3maVso6JPSxdfC5IzA/edit#gid=954708331")
+        let url = URL(string: "https://docs.google.com/spreadsheets/d/1GnBEFpa6s1oIbqtp-IBnKzxGsAvjDlpKDTw2hi5L4K0/edit#gid=1204833092")
         NSWorkspace.shared.open(url!)
     }
 

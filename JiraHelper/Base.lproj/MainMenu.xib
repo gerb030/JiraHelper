@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,40 +24,40 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="u1X-YH-xma">
             <items>
-                <menuItem title="MAINT dash" id="BZg-1X-4lq">
+                <menuItem title="Team Dashboard DE VS" id="BZg-1X-4lq">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="blockersClicked:" target="Voe-Tx-rLC" id="EpG-Nw-EiJ"/>
+                        <action selector="DeVSBoardClicked:" target="Voe-Tx-rLC" id="LAY-Hx-r5y"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Code Freeze Check" id="h2f-hn-9FV">
+                <menuItem title="Tech Maturity Sheet" id="h2f-hn-9FV">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="codeFreezeCheckClicked:" target="Voe-Tx-rLC" id="NfZ-3x-GJu"/>
+                        <action selector="techMaturitySheetClicked:" target="Voe-Tx-rLC" id="0b6-dQ-qti"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Release Check" id="tEE-qm-cZz">
+                <menuItem title="MAINT Jira Dashboard" id="tEE-qm-cZz">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="ticketsInReleaseClicked:" target="Voe-Tx-rLC" id="2WO-Qg-dnv"/>
                     </connections>
                 </menuItem>
-                <menuItem title="True fixes" id="Ju9-OF-2ln">
+                <menuItem title="TMM Criteria" id="Ju9-OF-2ln">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="trueFixesClicked:" target="Voe-Tx-rLC" id="dan-pO-o2L"/>
+                        <action selector="TMMCriteriaClicked:" target="Voe-Tx-rLC" id="G7f-Ev-LKE"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Last 1 week Maint" id="wU5-g3-xzE">
+                <menuItem title="DE VS Who's Who" id="wU5-g3-xzE">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="last1WeekMaintClicked:" target="Voe-Tx-rLC" id="MJB-Gt-7A3"/>
+                        <action selector="whosWhoClicked:" target="Voe-Tx-rLC" id="coX-Bp-VIA"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Doc tickets current release" id="FL4-sf-gVn">
+                <menuItem title="Leapsome" id="FL4-sf-gVn">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="docsCurrentReleaseClicked:" target="Voe-Tx-rLC" id="Rja-QF-mk7"/>
+                        <action selector="leapsomeClicked:" target="Voe-Tx-rLC" id="Gqh-rD-omS"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Open Doc tickets" id="yqG-Bh-G7h">
@@ -73,16 +73,16 @@
                         <action selector="maintReleasesClicked:" target="Voe-Tx-rLC" id="o1F-1r-zpn"/>
                     </connections>
                 </menuItem>
-                <menuItem title="CX Release Board" id="Jy1-V0-YRU">
+                <menuItem title="MAINT Project Config" id="Jy1-V0-YRU">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="releaseBoard:" target="Voe-Tx-rLC" id="GuF-ID-obJ"/>
+                        <action selector="maintProjectConfigClick:" target="Voe-Tx-rLC" id="yh5-iP-vNg"/>
                     </connections>
                 </menuItem>
-                <menuItem title="CX Releases list" id="Ca4-bD-BOS">
+                <menuItem title="DEVS MT Miro" id="Ca4-bD-BOS">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="releaseList:" target="Voe-Tx-rLC" id="iX6-od-nDs"/>
+                        <action selector="devsMtMiro:" target="Voe-Tx-rLC" id="AZy-A1-2WJ"/>
                     </connections>
                 </menuItem>
                 <menuItem title="MAINT Dashboard" id="p5C-VL-Qxv">
@@ -122,13 +122,13 @@
                         <action selector="goalsWoWPage:" target="Voe-Tx-rLC" id="O6D-po-F5U"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Search" id="Q10-xJ-qiD">
+                <menuItem title="Confluence Search" id="Q10-xJ-qiD">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="searchClicked:" target="Voe-Tx-rLC" id="j3j-BP-Jlf"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Personal page" id="Ol2-BN-3do">
+                <menuItem title="Confluence Personal page" id="Ol2-BN-3do">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="personalPageClicked:" target="Voe-Tx-rLC" id="84R-uY-osp"/>
@@ -147,10 +147,10 @@
                         <action selector="signUpSheet:" target="Voe-Tx-rLC" id="5Rm-sD-uIa"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Blackduck" id="EMR-24-CeX">
+                <menuItem title="Bamboo" id="EMR-24-CeX">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="blackduckClicked:" target="Voe-Tx-rLC" id="Rec-kJ-Hco"/>
+                        <action selector="bambooClicked:" target="Voe-Tx-rLC" id="rOM-rd-Fy3"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Community retirement" id="O2c-wn-xLv">
