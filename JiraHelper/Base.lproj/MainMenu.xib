@@ -175,6 +175,12 @@
                                     <action selector="netsuiteClicked:" target="Voe-Tx-rLC" id="Fag-SH-ngJ"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Netsuite time report (contractors)" id="RtQ-ot-Ffb">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="netsuiteTimeReportClicked:" target="Voe-Tx-rLC" id="K4s-MD-MNm"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Recruiters Overview" id="j9l-jt-fbt">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -227,7 +233,6 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Omf-X0-H6R"/>
-                <menuItem isSeparatorItem="YES" id="WyW-Uu-sLm"/>
                 <menuItem title="Quit" id="Y0j-iX-xku">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -235,7 +240,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="151" y="524"/>
+            <point key="canvasLocation" x="150.5" y="534.5"/>
         </menu>
         <textField verticalHuggingPriority="750" id="yUI-0E-xHD">
             <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>

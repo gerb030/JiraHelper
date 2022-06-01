@@ -183,6 +183,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.open(url!)
     }
     
+    @IBAction func netsuiteTimeReportClicked(_ sender: Any) {
+        let url = URL(string: "https://4098367.app.netsuite.com/app/common/search/search.nl?reload=T")
+        NSWorkspace.shared.open(url!)
+    }
+
+    
     @IBAction func FTEoverview(_ sender: Any) {
         let url = URL(string: "https://docs.google.com/spreadsheets/d/1KUe3QJXPndtJhCox6XRj9m83nNIFzy2CABSEbQ74zyQ/edit?ts=5d822039#gid=473843856")
         NSWorkspace.shared.open(url!)
